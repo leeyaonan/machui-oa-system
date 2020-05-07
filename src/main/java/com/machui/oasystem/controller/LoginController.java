@@ -1,6 +1,7 @@
 package com.machui.oasystem.controller;
 
 import com.machui.oasystem.common.model.ApiResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,11 +21,14 @@ public class LoginController {
         data.put("tokenHead", TOKEN_HEAD);
         ApiResult<Object> apiResult = new ApiResult<>();
         apiResult.setCode(200);
+        apiResult.setErrno(0);
         apiResult.setData(data);
         apiResult.setMessage("操作成功");
         return apiResult;
-
     }
-
+    @GetMapping("/admin/auth/info")
+    public String login2() {
+        return "succcess";
+    }
 
 }
